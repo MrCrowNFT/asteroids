@@ -33,6 +33,11 @@ def main():
 
         updatable.update(dt)
 
+        for asteroid in asteroids:
+            if player.collides_with(asteroid):
+                print("Game over!")
+                exit()
+
         pygame.display.flip()
         time_passed=clock.tick(60)
         dt = time_passed/1000
